@@ -1,16 +1,9 @@
 
 # 📊 Business Intelligence & Data Analytics Portfolio
 
-**Power BI | Python | Machine Learning | Business Analytics | Data Visualization**
+**Tools:** Power BI, Python, Pandas, Plotly, Scikit-learn, Statsmodels, DAX
 
-A portfolio of two real-world business analytics projects combining interactive Power BI dashboards, exploratory data analysis, statistical modeling, and machine learning to support data-driven decision-making.
-
-## 📌 Projects Overview
-
-| Project | Domain | Key Technologies |
-|---|---|---|
-| Sales Analytics & Customer Insights | Metals Manufacturing | Power BI, DAX |
-| Gold Procurement Strategy & Analytics | Jewellery Retail | Python, Power BI, Scikit-learn, Statsmodels |
+A portfolio showcasing two business analytics projects combining interactive Power BI dashboards, exploratory data analysis, statistical modeling, and machine learning to support data-driven decision-making.
 
 ---
 
@@ -18,43 +11,52 @@ A portfolio of two real-world business analytics projects combining interactive 
 
 **Industry:** Metals Manufacturing  
 **Analysis Period:** April 2023 – March 2024  
-**Tools:** Power BI, DAX, Data Cleaning, Data Visualization
+**Tools:** Power BI, DAX
 
-## Overview
+## 📌 Project Overview
 
 Developed an interactive Power BI dashboard to analyze sales performance, customer behavior, transaction values, and monthly sales trends using 257 GST sales records from a metals manufacturing company.
 
-The dashboard provides a consolidated view of business performance and helps identify high-value customers, sales patterns, and opportunities for better business planning.
+The dashboard helps stakeholders monitor business performance, identify high-value customers, and understand monthly sales patterns.
 
-## Dashboard Preview
+## 🔧 Data Preprocessing
 
-### Sales Overview Dashboard
+![Data Preprocessing](https://drive.google.com/uc?export=view&id=1g0VZAMd1BiNr4XxmKlB29sHPJhPj79WH)
 
-![Sales Overview Dashboard](Business_dashboard/Screenshots/sales-overview.png)
+## 📊 Sales Dashboard
 
-### Customer Insights Dashboard
+![Sales Dashboard](https://drive.google.com/uc?export=view&id=1lIFMqXEHvqS3B_j09_v4HjX4M7zuhD7j)
 
-![Customer Insights Dashboard](Business_dashboard/Screenshots/customer-insights.png)
+---
 
-## Key Features
+## 📈 Sales Overview Dashboard
 
-- Monthly sales trend analysis using area charts.
+![Sales Dashboard 1](https://drive.google.com/uc?export=view&id=1RuYLJzFtR9WCEoTRuNa80dAgoC8A_Cmn)
+
+## 👥 Customer Insights Dashboard
+
+![Sales Dashboard 2](https://drive.google.com/uc?export=view&id=1ZLpM4hY-5cTaTOncInzZEfm96s2qTdid)
+
+## ✨ Key Features
+
+- Monthly sales trend analysis.
 - Monthly sales quantity analysis.
 - Top-five customers ranked by sales value.
 - Maximum single-transaction sales monitoring.
 - GST component analysis.
 - KPI cards for sales count, customer count, average sales per transaction, and average quantity sold.
-- Interactive customer, year, and month filters.
+- Interactive year, month, and customer filters.
 - DAX calculations for sales in lakhs and quantities in metric tonnes.
 
-## Business Value
+## 💡 Business Value
 
-- Identifies high-value customers for relationship management.
-- Reveals monthly sales trends and seasonal patterns.
-- Supports sales performance monitoring.
-- Provides insights for inventory planning and strategic decision-making.
+- Identifies high-value customers.
+- Highlights monthly sales trends and seasonal patterns.
+- Supports customer relationship management.
+- Improves sales performance monitoring.
+- Provides insights for inventory planning and business decisions.
 
-**Data Confidentiality:** The original company dataset is proprietary and has not been included in this repository.
+**Data Confidentiality:** The original company dataset is proprietary and is not included in this repository.
 
 ---
 
@@ -64,68 +66,46 @@ The dashboard provides a consolidated view of business performance and helps ide
 **Analysis Period:** 2024–2025  
 **Tools:** Python, Pandas, Plotly, Scikit-learn, Statsmodels, Power BI
 
-## Overview
+## 📌 Project Overview
 
-Developed a data-driven analytics solution to investigate jewellery sales, gold price movements, customer segments, and procurement risks in a volatile gold pricing environment.
+Developed a data-driven analytics solution to investigate jewellery sales patterns, gold price movements, customer segments, and procurement risks.
 
-The project combines exploratory data analysis, statistical modeling, machine learning, and interactive dashboard visualization to support informed procurement planning and business decisions.
+The project combines exploratory data analysis, statistical modeling, machine learning, and Power BI visualization to support informed procurement planning.
 
-## Dashboard Preview
-
-![Gold Procurement Strategy Dashboard](ABC-Gold-Procurement-Strategy-Dashboard/Screenshots/gold-procurement-dashboard.png)
-
-## Key Features
+## ✨ Key Features
 
 ### Exploratory Data Analysis
-
 - Monthly sales and purchasing trend analysis.
-- Investigation of sales, purchasing behavior, and profitability.
+- Profit and loss pattern investigation.
 - Analysis of pricing patterns around auspicious occasions.
-- Statistical summaries, correlation analysis, and trend analysis.
+- Statistical summaries and correlation analysis.
 
-### Gold Price Volatility Analysis
-
-**GARCH Model**
-- Models conditional volatility in gold prices.
-- Helps assess changes in market risk over time.
-- Supports risk-aware procurement analysis.
-
-**Bollinger Bands**
-- Examines price movements relative to rolling averages and standard deviations.
-- Identifies prices that are relatively high or low compared with recent trends.
+### Gold Price Analysis
+- **GARCH:** Models conditional gold price volatility.
+- **Bollinger Bands:** Examines price movements relative to rolling averages and standard deviations.
 
 ### Anomaly Detection
-
-**Local Outlier Factor (LOF)**
-
-- Detects unusual transaction patterns.
-- Flags potentially abnormal prices or quantities for further investigation.
+- **Local Outlier Factor (LOF):** Identifies unusual transaction patterns for further investigation.
 
 ### Customer Segmentation
-
-**K-Means Clustering**
-
-- Groups customers using selected purchasing and profitability characteristics.
-- Explores segments such as bulk buyers, high-margin customers, and low-frequency buyers.
-- Supports targeted customer engagement strategies.
+- **K-Means Clustering:** Groups customers based on selected purchasing and profitability characteristics.
 
 ### Power BI Dashboard
-
 - Monthly sales and purchase analysis.
-- Profit and loss trend visualization.
-- Customer segment analysis.
-- Product and transaction pattern monitoring.
+- Profit and loss trends.
+- Customer segment visualization.
+- Transaction and pricing insights.
 - KPI-based business performance reporting.
 
-## Business Value
+## 💡 Business Value
 
-- Supports procurement planning through data analysis.
-- Improves visibility into gold price movements and potential purchasing risks.
-- Identifies unusual transactions for further investigation.
-- Enables customer segmentation and targeted marketing.
-- Helps stakeholders understand sales performance and profitability.
+- Supports procurement planning and risk assessment.
+- Improves visibility into sales and profitability.
+- Identifies unusual transactions for further review.
+- Enables customer segmentation.
+- Supports data-driven business decisions.
 
-**Important:** Statistical indicators and model outputs support decision-making but do not guarantee future gold prices or procurement profitability.
+*Statistical indicators and model outputs are decision-support tools and do not guarantee future gold prices or procurement profitability.*
 
 ---
 
@@ -137,42 +117,13 @@ The project combines exploratory data analysis, statistical modeling, machine le
 | Dashboard Calculations | DAX |
 | Programming | Python |
 | Data Manipulation | Pandas, NumPy |
-| Data Visualization | Power BI, Plotly |
+| Visualization | Power BI, Plotly |
 | Statistical Modeling | Statsmodels, GARCH |
 | Machine Learning | Scikit-learn |
 | Anomaly Detection | Local Outlier Factor |
 | Customer Segmentation | K-Means Clustering |
 | Price Analysis | Bollinger Bands |
 | Development Environment | Jupyter Notebook |
-
----
-
-# 📂 Repository Structure
-
-```text
-Business-Intelligence-and-Data-Analytics/
-│
-├── README.md
-│
-├── Business_dashboard/
-│   ├── Audit.pbix
-│   ├── README.md
-│   ├── Sales Report Overview.pptx
-│   └── Screenshots/
-│       ├── sales-overview.png
-│       └── customer-insights.png
-│
-└── ABC-Gold-Procurement-Strategy-Dashboard/
-    ├── README.md
-    ├── Project report .pdf
-    ├── Cleaned csv/
-    ├── EDA and Data profiling/
-    ├── ML models/
-    └── Screenshots/
-        └── gold-procurement-dashboard.png
-```
-
-*The folder structure above is a recommended layout. Create the `Screenshots` folders and upload the corresponding PNG images if they do not already exist. Retain your original filenames or update the README paths to match them.*
 
 ---
 
@@ -192,13 +143,13 @@ Business-Intelligence-and-Data-Analytics/
 
 # 🚀 Conclusion
 
-These projects demonstrate how business intelligence and data science can be applied across different industries to solve practical business problems.
+These projects demonstrate the application of business intelligence and data science across different industries.
 
 The Sales Analytics Dashboard focuses on sales performance, customer insights, and business reporting, while the Gold Procurement Analytics project extends the analysis through statistical modeling, anomaly detection, customer segmentation, and procurement risk assessment.
 
-Together, they demonstrate an analytical workflow spanning data preparation, exploratory analysis, machine learning, visualization, and decision support.
+Together, they showcase an analytical workflow spanning data preparation, exploratory analysis, machine learning, visualization, and decision support.
 
-**Objective:** Transform raw business data into actionable insights that support better decisions, improve business visibility, and enable data-driven strategies.
+**Objective:** Transform raw business data into actionable insights that support better decisions and data-driven business strategies.
 
 ---
 
@@ -208,4 +159,4 @@ Together, they demonstrate an analytical workflow spanning data preparation, exp
 
 **Areas of Interest:** Data Science | Business Intelligence | Machine Learning | Data Analytics
 
-GitHub: [@Saravanakumarsk1210](https://github.com/Saravanakumarsk1210)
+**GitHub:** [Saravanakumarsk1210](https://github.com/Saravanakumarsk1210)
