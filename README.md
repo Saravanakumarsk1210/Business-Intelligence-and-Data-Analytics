@@ -356,12 +356,3 @@ Business-Intelligence-and-Data-Analytics/
 *This is a suggested structure. Keep only files and folders that actually exist in your repository. Add notebooks, screenshots, and reports where available and appropriate.*
 
 ---
-
-# 👤 Author
-
-**Saravana Kumar**  
-Data Science | Business Intelligence | Data Analytics
-
----
-
-*This portfolio is intended for educational and professional demonstration. Analytical results are specific to the datasets and methods used; they should be validated before being used for financial or operational decisions.*
