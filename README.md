@@ -3,8 +3,6 @@
 
 A collection of two independent business analytics projects demonstrating data cleaning, exploratory data analysis, machine learning, financial analysis, and interactive Power BI dashboards.
 
-## 👋 About This Portfolio
-
 This repository brings together two projects focused on transforming business data into actionable insights:
 
 1. **ABC Gold – Procurement Strategy Dashboard (2024–2025):** Combines Python, statistical modeling, machine learning, and Power BI to explore jewellery sales, metal-price trends, customer segments, and procurement decisions.
