@@ -1,74 +1,266 @@
 
 # 📊 Business Intelligence & Data Analytics Portfolio
 
-**Author:** Saravana Kumar  
-**Technologies:** Power BI, Python, Pandas, Plotly, Scikit-learn, Statsmodels, DAX, Jupyter Notebook
+A collection of two independent business analytics projects demonstrating data cleaning, exploratory data analysis, machine learning, financial analysis, and interactive Power BI dashboards.
 
-This repository contains two independent data analytics projects focused on solving real-world business problems through business intelligence, data visualization, statistical analysis, and machine learning.
+## 👋 About This Portfolio
 
-## 📁 Projects Overview
+This repository brings together two projects focused on transforming business data into actionable insights:
 
-| Project | Domain | Tools |
-|---|---|---|
-| Sales Dashboard & Insights | Metals Manufacturing | Power BI, DAX |
-| ABC Gold Procurement Strategy Dashboard | Jewellery Retail | Python, Machine Learning, Power BI |
+1. **ABC Gold – Procurement Strategy Dashboard (2024–2025):** Combines Python, statistical modeling, machine learning, and Power BI to explore jewellery sales, metal-price trends, customer segments, and procurement decisions.
+2. **Sales Dashboard & Insights – Power BI Project (2023–2024):** Uses Power BI and DAX to analyze sales performance, customer activity, transaction values, and tax-related metrics for a metals manufacturing company.
+
+Each project has its own objectives, analytical workflow, and deliverables. They are documented separately below.
 
 ---
 
-# 📈 Project 1: Sales Dashboard & Insights — Power BI
+# 🪙 Project 1: ABC Gold – Procurement Strategy Dashboard (2024–2025)
 
-**Company:** Senthil Andavar Metal Company  
-**Industry:** Metals Manufacturing  
-**Analysis Period:** April 1, 2023 – March 31, 2024  
-**Tool:** Microsoft Power BI
+> **Tools:** Python, Pandas, Plotly, Scikit-learn, Statsmodels, Power BI  
+> **Data sources:** Internal sales data, daily metal prices, and GoldBees ETF data  
+> **Focus:** Sales analysis, price volatility, customer segmentation, and procurement decision support
+
+## 📌 Project Overview
+
+ABC Gold is a jewellery-retail analytics case study focused on understanding sales patterns and operating in a market affected by fluctuating gold prices.
+
+The project aims to:
+
+- Analyze sales, profitability, and pricing patterns.
+- Examine gold-price volatility to support procurement planning.
+- Identify unusual transactions and customer segments.
+- Explore seasonal trends and purchasing behavior.
+- Present business insights through an interactive Power BI dashboard.
+
+The solution combines exploratory data analysis, statistical modeling, machine learning, and visualization to support data-informed decisions.
+
+## 📂 Datasets
+
+### Raw datasets
+
+| Dataset | Description |
+|---|---|
+| `Sales Data 1.csv` | Sales records from April to September 2024 |
+| `Sales Data 2.csv` | Sales records from October 2024 to March 2025 |
+| `Daily Rate Capture.csv` | Daily gold, silver, and platinum prices |
+| `GoldBees Data.csv` | GoldBees ETF market data |
+
+### Cleaned datasets
+
+| Dataset | Description |
+|---|---|
+| `Sales Data.csv` | Merged and cleaned sales records |
+| `Daily Rate Capture.csv` | Cleaned daily metal-price data |
+| `GoldBees Data.csv` | Cleaned ETF dataset |
+
+### Data preprocessing
+
+The preprocessing workflow includes:
+
+- Missing-value imputation.
+- Unit standardization.
+- Z-score-based outlier detection and removal.
+- Date and time parsing.
+- One-hot encoding of categorical variables.
+- Data-type conversion and formatting.
+
+### Preprocessing visualization
+
+![ABC Gold data preprocessing](https://drive.google.com/uc?export=view&id=1g0VZAMd1BiNr4XxmKlB29sHPJhPj79WH)
+
+## 📈 Exploratory Data Analysis
+
+The notebook `Trend_and_Pattern_Analysis.ipynb` explores sales trends, customer behavior, and market-related patterns.
+
+### Areas investigated
+
+- Monthly sales trends and seasonal peaks.
+- Relationships between profit/loss and purchasing behavior.
+- The association between Muhurtham (auspicious days) and sales or pricing patterns.
+- Unusual observations using Local Outlier Factor (LOF).
+- Customer purchasing patterns and transaction characteristics.
+
+### Techniques
+
+- Descriptive statistics and group-wise aggregation.
+- K-Means clustering with the Elbow Method.
+- Seasonal decomposition and trend smoothing.
+- Correlation analysis and heatmaps.
+
+## 🤖 Predictive Modeling and Risk Analysis
+
+The notebook `ML models.ipynb` contains the project's modeling and analytical experiments.
+
+### 1. GARCH volatility modeling
+
+The Generalized Autoregressive Conditional Heteroskedasticity (GARCH) model is used to examine conditional volatility in the analyzed price series.
+
+**Purpose:** Understand changes in price volatility and provide additional context for procurement planning.
+
+The original analysis reported periods of relatively low volatility. This should be interpreted in the context of the selected dataset and analysis period—not as a guarantee that future prices will remain stable.
+
+### 2. Bollinger Bands
+
+Bollinger Bands are used to examine price movements relative to a moving average and a measure of recent variability.
+
+**Analytical use:** Investigate whether prices are near the upper or lower bands and compare those observations with other market indicators.
+
+Band positions alone do not establish that a price is overvalued or undervalued and should not be treated as standalone buy/sell instructions.
+
+### 3. Anomaly detection with LOF
+
+Local Outlier Factor identifies observations that differ from their local neighborhood.
+
+Potential applications include investigating unusual transaction values, quantities, or pricing patterns. A detected anomaly requires further review; it does not, by itself, prove fraud or price manipulation.
+
+### 4. Customer segmentation with K-Means
+
+The reported cluster profiles are:
+
+| Cluster | Observed profile |
+|---|---|
+| Cluster 0 | High-margin, low-volume customers |
+| Cluster 1 | Low-margin, low-frequency buyers |
+| Cluster 2 | Bulk buyers |
+
+These labels describe the profiles identified in the analysis. Their interpretation depends on the features, scaling, and cluster assignments used in the notebook.
+
+## 📊 Power BI Dashboard
+
+The dashboard is available in `ABC_Gold_Insights.pbix`.
+
+### Dashboard highlights
+
+- Monthly purchases and sales.
+- Net profit/loss trends.
+- Customer segments based on clustering.
+- Transaction and pricing patterns.
+- KPIs supporting procurement and business analysis.
+
+![ABC Gold Power BI dashboard](https://drive.google.com/uc?export=view&id=1lIFMqXEHvqS3B_j09_v4HjX4M7zuhD7j)
+
+## 🔍 Key Findings
+
+| Focus area | Analytical contribution |
+|---|---|
+| Price volatility | GARCH analysis examines changes in conditional price volatility. |
+| Sales trends | Monthly trends help identify periods of stronger or weaker sales activity. |
+| Anomaly detection | LOF highlights unusual observations for further investigation. |
+| Customer segmentation | Clustering provides a data-driven view of different purchasing profiles. |
+| Procurement planning | Moving averages, market indicators, and seasonal patterns provide additional decision context. |
+
+## 🚀 Recommendations
+
+- Combine price-volatility analysis with business constraints and inventory requirements when evaluating procurement timing.
+- Use Bollinger Bands as one analytical indicator rather than a standalone trading or procurement rule.
+- Review LOF-flagged transactions before drawing conclusions about irregular activity.
+- Use customer segments to investigate opportunities for tailored engagement and retention.
+- Incorporate observed seasonal patterns into inventory and promotional planning.
+
+## 📂 Project 1 Files
+
+The original project documentation lists the following deliverables:
+
+| File | Description |
+|---|---|
+| `Sales Data.csv` | Cleaned, merged sales dataset |
+| `Daily Rate Capture.csv` | Cleaned metal-price dataset |
+| `GoldBees Data.csv` | GoldBees ETF dataset |
+| `Trend_and_Pattern_Analysis.ipynb` | EDA and trend analysis |
+| `ML models.ipynb` | Modeling and risk analysis |
+| `ABC_Gold_Insights.pbix` | Power BI dashboard |
+| `Project report.pdf` | Project report |
+
+*Availability depends on which original project files are included in the combined repository.*
+
+---
+
+# 📈 Project 2: Sales Dashboard & Insights – Power BI Project
+
+> **Author:** Saravana Kumar  
+> **Region:** Madurai, Tamil Nadu, India  
+> **Tool:** Microsoft Power BI  
+> **Dataset source:** Senthil Andavar Metal Company  
+> **Analysis period:** 1 April 2023 – 31 March 2024
+
+> **Data confidentiality:** The source dataset is proprietary and has not been included in this portfolio. The dashboard and analysis are documented without publishing the company's confidential records.
 
 ## 📝 Project Overview
 
-This project focuses on analyzing and visualizing sales data using Power BI. The dataset contains 257 GST sales records and 28 unique customers from April 2023 to March 2024.
+This project analyzes sales and purchase-related business data using Power BI. The goal is to transform transactional records into interactive visualizations that help users understand sales performance, customer contributions, transaction values, and tax-related metrics.
 
-Through data cleaning, transformation, DAX calculations, and interactive visualizations, the dashboard provides insights into sales performance, customer behavior, transaction values, and monthly sales trends.
+The workflow includes data cleaning, transformation, DAX calculations, KPI development, and dashboard design.
 
-## 🔧 Data Preprocessing
+## 🧾 Dataset Summary
 
-![Data Preprocessing](https://drive.google.com/uc?export=view&id=1g0VZAMd1BiNr4XxmKlB29sHPJhPj79WH)
+| Attribute | Description |
+|---|---|
+| Total records | 257 |
+| Analysis period | 1 April 2023 – 31 March 2024 |
+| Unique customers | 28 |
+| Voucher type | GST Sales |
+| Quantity metric | Quantity (Kgs) |
+| Financial metric | Gross Total (Dr) |
+| Sales metric | GST Sales (Cr) |
+| Tax and adjustment fields | CGST, SGST, IGST, Round_Off |
 
-## 📊 Sales Dashboard
-
-![Sales Dashboard](https://drive.google.com/uc?export=view&id=1lIFMqXEHvqS3B_j09_v4HjX4M7zuhD7j)
-
-## 📈 Sales Overview Dashboard
-
-![Sales Overview Dashboard](https://drive.google.com/uc?export=view&id=1RuYLJzFtR9WCEoTRuNa80dAgoC8A_Cmn)
-
-## 👥 Customer Insights Dashboard
-
-![Customer Insights Dashboard](https://drive.google.com/uc?export=view&id=1ZLpM4hY-5cTaTOncInzZEfm96s2qTdid)
+The dashboard was developed using the available business records for the stated analysis period.
 
 ## 🔧 Data Transformation
 
-- Renamed columns for clarity.
-- Converted text-based financial fields into numeric data types.
-- Handled missing and null values.
-- Formatted dates and standardized decimal precision.
-- Created derived metrics for sales in lakhs and quantities in metric tonnes.
-- Implemented DAX calculations for business KPIs.
+The transformation process included:
 
-## ✨ Dashboard Features
+- **Column formatting:** Renamed fields for clarity, including quantity and rate columns.
+- **Data-type conversion:** Converted text-based financial fields into numeric values.
+- **Data cleaning:** Handled missing or null values and standardized dates and decimal precision.
+- **Derived metrics:** Created measures to express sales in lakhs and quantity in metric tons using DAX.
 
-### Area Charts
-- Monthly sales value in lakhs.
-- Monthly quantity sold in metric tonnes.
+### Example DAX calculations
 
-### Bar Chart
-- Top five customers by sales value.
+**Sales in lakhs**
 
-### Gauge Chart
-- Maximum single-transaction sale value.
+```DAX
+Value in Lakhs =
+DIVIDE(SUM(Sales[Gross Total (Dr)]), 100000)
+```
 
-### Pie Chart
-- GST component breakdown.
+**Quantity in metric tons**
 
-### KPI Cards
+```DAX
+Quantity in MT =
+DIVIDE(SUM(Sales[Quantity (Kgs)]), 1000)
+```
+
+These calculations assume that the source fields are numeric and that the quantity is measured in kilograms.
+
+## 📊 Dashboard Visualizations
+
+### 1. Monthly sales overview
+
+An area chart shows monthly sales in lakhs to help users examine changes in sales performance over time.
+
+![Sales overview dashboard](https://drive.google.com/uc?export=view&id=1RuYLJzFtR9WCEoTRuNa80dAgoC8A_Cmn)
+
+### 2. Monthly quantity analysis
+
+An area chart tracks the quantity sold each month in metric tons, supporting analysis of sales volume and inventory-related patterns.
+
+### 3. Top 5 customers by sales
+
+A bar chart highlights the five highest-value customers by sales, helping identify important customer relationships.
+
+### 4. Maximum transaction value
+
+A gauge visual displays the maximum single-transaction sale in lakhs for transaction-level performance analysis.
+
+### 5. GST breakdown
+
+A pie chart compares the tax-related categories represented in the dashboard, including GST Sales, IGST, and SGST, as configured in the underlying data model.
+
+### 6. KPI cards
+
+The dashboard includes indicators for:
+
 - Total number of sales.
 - Total number of customers.
 - Average sales per transaction.
@@ -76,429 +268,100 @@ Through data cleaning, transformation, DAX calculations, and interactive visuali
 - Fastest-growing month.
 - Peak sales day.
 
-### Interactive Slicers
-- Filter by year and month.
-- Filter by customer.
+### 7. Customer insights
+
+Customer-focused visuals help users compare customer contributions and explore differences in purchasing activity.
+
+![Customer insights dashboard](https://drive.google.com/uc?export=view&id=1ZLpM4hY-5cTaTOncInzZEfm96s2qTdid)
+
+### 8. Interactive slicers
+
+Users can filter the dashboard by available year, month, and customer fields to explore specific portions of the data.
 
 ## 🚀 Key Business Outcomes
 
-- **Sales Trend Analysis:** Identifies monthly sales patterns to support inventory planning.
-- **Customer Insights:** Highlights high-value customers for relationship management.
-- **Strategic Pricing and Promotions:** Helps identify peak and slower sales periods.
-- **Performance Monitoring:** Provides a consolidated view of important sales KPIs.
-
-**Data Confidentiality:** The original company dataset is proprietary and is not included in this public repository.
-
-## 📂 Project Files
-
-- `Audit.pbix` — Interactive Power BI dashboard.
-- `Sales Report Overview.pptx` — Sales report presentation.
-- `README.md` — Project documentation.
-
----
-
-# 🪙 Project 2: ABC Gold — Procurement Strategy Dashboard
-
-**Industry:** Jewellery Retail  
-**Analysis Period:** 2024–2025  
-**Tools:** Python, Pandas, Plotly, Scikit-learn, Statsmodels, Power BI
-
-## 📌 Project Overview
-
-This project analyzes jewellery sales patterns, gold price movements, customer segments, and procurement risks in a volatile gold pricing environment.
-
-It combines exploratory data analysis, statistical modeling, machine learning, and Power BI visualization to support informed procurement planning and business decision-making.
-
-## 📊 Gold Procurement Dashboard
-
-![ABC Gold Procurement Strategy Dashboard](ABC-Gold-Procurement-Strategy-Dashboard/Screenshots/gold-procurement-dashboard.png)
-
-*This image path assumes the screenshot is uploaded to the specified folder in the repository. Replace it with the actual path if your filename or folder differs.*
-
-## 🧾 Dataset Sources
-
-### Sales Data
-- `Sales Data 1.csv` — Sales from April 2024 to September 2024.
-- `Sales Data 2.csv` — Sales from October 2024 to March 2025.
-
-### Market Data
-- `Daily Rate Capture.csv` — Daily gold, silver, and platinum prices.
-- `GoldBees Data.csv` — Indian gold ETF market data.
-
-### Data Preparation
-
-- Missing-value imputation.
-- Unit standardization.
-- Z-score-based outlier removal.
-- Date and time parsing.
-- One-hot encoding.
-- Data type conversion and formatting.
-- Merging and cleaning sales records.
-
-## 📈 Exploratory Data Analysis
-
-- Monthly sales trends and seasonal peaks.
-- Relationships between profit/loss and purchasing behavior.
-- Pricing patterns around Muhurtham (auspicious occasions).
-- Descriptive statistics and group-wise aggregation.
-- Seasonal decomposition and trend smoothing.
-- Correlation heatmaps.
-- Anomaly detection using Local Outlier Factor.
-
-## 🤖 Statistical Modeling & Machine Learning
-
-### 1. GARCH — Gold Price Volatility
-
-- Models conditional volatility in gold prices.
-- Evaluates changes in market risk over time.
-- Supports risk-aware procurement analysis.
-
-### 2. Bollinger Bands — Price Analysis
-
-- Examines price movements relative to rolling averages and standard deviations.
-- Helps identify relatively high and low price levels compared with recent trends.
-
-### 3. Local Outlier Factor — Anomaly Detection
-
-- Identifies unusual transaction patterns.
-- Flags potentially abnormal pricing or quantities for further investigation.
-
-### 4. K-Means — Customer Segmentation
-
-The original analysis identified three customer segments:
-
-- **Cluster 0:** High-margin, low-volume customers.
-- **Cluster 1:** Low-margin, low-frequency buyers.
-- **Cluster 2:** Bulk buyers.
-
-These segments can support differentiated customer engagement and marketing strategies.
-
-## 📊 Power BI Dashboard Features
-
-- Monthly purchases and sales overview.
-- Net profit/loss trends.
-- Customer segment visualization.
-- Transaction patterns and pricing insights.
-- KPI-based business performance monitoring.
-- Visual insights for procurement decisions.
-
-## 🔍 Key Analytical Findings
-
-| Focus Area | Contribution |
+| Area | Business value |
 |---|---|
-| Gold Price Volatility | GARCH evaluates changes in conditional volatility. |
-| Price Analysis | Bollinger Bands contextualize prices against recent trends. |
-| Sales Trends | Monthly analysis highlights seasonal patterns. |
-| Anomaly Detection | LOF flags unusual transactions for further investigation. |
-| Customer Segmentation | K-Means identifies distinct purchasing groups. |
-| Procurement Strategy | Analytical indicators support informed purchasing decisions. |
+| Sales trend analysis | Helps identify stronger and weaker periods for further investigation. |
+| Customer analysis | Highlights high-value customers for relationship management. |
+| Pricing and promotions | Provides historical context for planning promotions and reviewing sales patterns. |
+| KPI monitoring | Offers a consolidated view of sales and customer metrics. |
+| Volume analysis | Helps compare monthly quantities with financial performance. |
 
-## 🚀 Recommendations
+## 📂 Project 2 Files
 
-- Evaluate procurement opportunities using gold price trends and volatility estimates.
-- Investigate unusual transactions identified by LOF.
-- Consider moving-average trends and calendar effects when planning inventory.
-- Use customer segments to support targeted marketing.
-- Review seasonal sales patterns when planning purchases and promotions.
+The original project documentation lists these files:
 
-*Statistical indicators and model outputs are decision-support tools. They do not guarantee future gold prices or procurement profitability.*
-
-## 📂 Project Files
-
-- `Cleaned csv/` — Cleaned and prepared datasets.
-- `EDA and Data profiling/` — Exploratory analysis and data profiling.
-- `ML models/` — Statistical modeling and machine learning.
-- `Project report .pdf` — Project report.
-- `README.md` — Project documentation.
-
----
-
-# 🛠️ Technical Skills Demonstrated
-
-| Category | Technologies and Skills |
+| File | Description |
 |---|---|
-| Business Intelligence | Power BI |
-| Dashboard Calculations | DAX |
-| Programming | Python |
-| Data Manipulation | Pandas, NumPy |
-| Data Visualization | Power BI, Plotly |
-| Statistical Modeling | Statsmodels, GARCH |
-| Machine Learning | Scikit-learn |
-| Anomaly Detection | Local Outlier Factor |
-| Customer Segmentation | K-Means Clustering |
-| Price Analysis | Bollinger Bands |
-| Development Environment | Jupyter Notebook |
+| `Audit.pbix` | Power BI dashboard file |
+| `Cleaned_Sales_Data.xlsx` | Transformed dataset, if permitted for distribution |
+| `README.md` | Original project documentation |
+
+**Confidentiality note:** Do not upload the company's proprietary source or cleaned data unless you have explicit permission to share it. The dashboard file should also be reviewed for embedded confidential records before publication.
 
 ---
 
-# 🎯 Overall Portfolio Value
+# 🧰 Technologies Used Across the Portfolio
 
-These projects demonstrate how analytics can address different business challenges across two industries.
-
-The Sales Dashboard focuses on sales reporting, customer insights, and business performance monitoring in metals manufacturing.
-
-The ABC Gold project applies statistical modeling, machine learning, customer segmentation, and price analysis to jewellery retail and procurement planning.
-
-Together, they demonstrate practical skills in data preparation, exploratory analysis, interactive dashboard development, analytical modeling, and business insight communication.
-
----
-
-# 👨‍💻 Author
-
-**Saravana Kumar**
-
-**Areas of Interest:** Data Science | Business Intelligence | Machine Learning | Data Analytics
-
-**GitHub:** [Saravanakumarsk1210](https://github.com/Saravanakumarsk1210)
-
-# 📊 Business Intelligence & Data Analytics Portfolio
-
-**Author:** Saravana Kumar  
-**Technologies:** Power BI, Python, Pandas, Plotly, Scikit-learn, Statsmodels, DAX, Jupyter Notebook
-
-This repository contains two independent data analytics projects focused on solving real-world business problems through business intelligence, data visualization, statistical analysis, and machine learning.
-
-## 📁 Projects Overview
-
-| Project | Domain | Tools |
-|---|---|---|
-| Sales Dashboard & Insights | Metals Manufacturing | Power BI, DAX |
-| ABC Gold Procurement Strategy Dashboard | Jewellery Retail | Python, Machine Learning, Power BI |
-
----
-
-# 📈 Project 1: Sales Dashboard & Insights — Power BI
-
-**Company:** Senthil Andavar Metal Company  
-**Industry:** Metals Manufacturing  
-**Analysis Period:** April 1, 2023 – March 31, 2024  
-**Tool:** Microsoft Power BI
-
-## 📝 Project Overview
-
-This project focuses on analyzing and visualizing sales data using Power BI. The dataset contains 257 GST sales records and 28 unique customers from April 2023 to March 2024.
-
-Through data cleaning, transformation, DAX calculations, and interactive visualizations, the dashboard provides insights into sales performance, customer behavior, transaction values, and monthly sales trends.
-
-## 🔧 Data Preprocessing
-
-![Data Preprocessing](https://drive.google.com/uc?export=view&id=1g0VZAMd1BiNr4XxmKlB29sHPJhPj79WH)
-
-## 📊 Sales Dashboard
-
-![Sales Dashboard](https://drive.google.com/uc?export=view&id=1lIFMqXEHvqS3B_j09_v4HjX4M7zuhD7j)
-
-## 📈 Sales Overview Dashboard
-
-![Sales Overview Dashboard](https://drive.google.com/uc?export=view&id=1RuYLJzFtR9WCEoTRuNa80dAgoC8A_Cmn)
-
-## 👥 Customer Insights Dashboard
-
-![Customer Insights Dashboard](https://drive.google.com/uc?export=view&id=1ZLpM4hY-5cTaTOncInzZEfm96s2qTdid)
-
-## 🔧 Data Transformation
-
-- Renamed columns for clarity.
-- Converted text-based financial fields into numeric data types.
-- Handled missing and null values.
-- Formatted dates and standardized decimal precision.
-- Created derived metrics for sales in lakhs and quantities in metric tonnes.
-- Implemented DAX calculations for business KPIs.
-
-## ✨ Dashboard Features
-
-### Area Charts
-- Monthly sales value in lakhs.
-- Monthly quantity sold in metric tonnes.
-
-### Bar Chart
-- Top five customers by sales value.
-
-### Gauge Chart
-- Maximum single-transaction sale value.
-
-### Pie Chart
-- GST component breakdown.
-
-### KPI Cards
-- Total number of sales.
-- Total number of customers.
-- Average sales per transaction.
-- Average quantity sold.
-- Fastest-growing month.
-- Peak sales day.
-
-### Interactive Slicers
-- Filter by year and month.
-- Filter by customer.
-
-## 🚀 Key Business Outcomes
-
-- **Sales Trend Analysis:** Identifies monthly sales patterns to support inventory planning.
-- **Customer Insights:** Highlights high-value customers for relationship management.
-- **Strategic Pricing and Promotions:** Helps identify peak and slower sales periods.
-- **Performance Monitoring:** Provides a consolidated view of important sales KPIs.
-
-**Data Confidentiality:** The original company dataset is proprietary and is not included in this public repository.
-
-## 📂 Project Files
-
-- `Audit.pbix` — Interactive Power BI dashboard.
-- `Sales Report Overview.pptx` — Sales report presentation.
-- `README.md` — Project documentation.
-
----
-
-# 🪙 Project 2: ABC Gold — Procurement Strategy Dashboard
-
-**Industry:** Jewellery Retail  
-**Analysis Period:** 2024–2025  
-**Tools:** Python, Pandas, Plotly, Scikit-learn, Statsmodels, Power BI
-
-## 📌 Project Overview
-
-This project analyzes jewellery sales patterns, gold price movements, customer segments, and procurement risks in a volatile gold pricing environment.
-
-It combines exploratory data analysis, statistical modeling, machine learning, and Power BI visualization to support informed procurement planning and business decision-making.
-
-## 📊 Gold Procurement Dashboard
-
-![ABC Gold Procurement Strategy Dashboard](ABC-Gold-Procurement-Strategy-Dashboard/Screenshots/gold-procurement-dashboard.png)
-
-*This image path assumes the screenshot is uploaded to the specified folder in the repository. Replace it with the actual path if your filename or folder differs.*
-
-## 🧾 Dataset Sources
-
-### Sales Data
-- `Sales Data 1.csv` — Sales from April 2024 to September 2024.
-- `Sales Data 2.csv` — Sales from October 2024 to March 2025.
-
-### Market Data
-- `Daily Rate Capture.csv` — Daily gold, silver, and platinum prices.
-- `GoldBees Data.csv` — Indian gold ETF market data.
-
-### Data Preparation
-
-- Missing-value imputation.
-- Unit standardization.
-- Z-score-based outlier removal.
-- Date and time parsing.
-- One-hot encoding.
-- Data type conversion and formatting.
-- Merging and cleaning sales records.
-
-## 📈 Exploratory Data Analysis
-
-- Monthly sales trends and seasonal peaks.
-- Relationships between profit/loss and purchasing behavior.
-- Pricing patterns around Muhurtham (auspicious occasions).
-- Descriptive statistics and group-wise aggregation.
-- Seasonal decomposition and trend smoothing.
-- Correlation heatmaps.
-- Anomaly detection using Local Outlier Factor.
-
-## 🤖 Statistical Modeling & Machine Learning
-
-### 1. GARCH — Gold Price Volatility
-
-- Models conditional volatility in gold prices.
-- Evaluates changes in market risk over time.
-- Supports risk-aware procurement analysis.
-
-### 2. Bollinger Bands — Price Analysis
-
-- Examines price movements relative to rolling averages and standard deviations.
-- Helps identify relatively high and low price levels compared with recent trends.
-
-### 3. Local Outlier Factor — Anomaly Detection
-
-- Identifies unusual transaction patterns.
-- Flags potentially abnormal pricing or quantities for further investigation.
-
-### 4. K-Means — Customer Segmentation
-
-The original analysis identified three customer segments:
-
-- **Cluster 0:** High-margin, low-volume customers.
-- **Cluster 1:** Low-margin, low-frequency buyers.
-- **Cluster 2:** Bulk buyers.
-
-These segments can support differentiated customer engagement and marketing strategies.
-
-## 📊 Power BI Dashboard Features
-
-- Monthly purchases and sales overview.
-- Net profit/loss trends.
-- Customer segment visualization.
-- Transaction patterns and pricing insights.
-- KPI-based business performance monitoring.
-- Visual insights for procurement decisions.
-
-## 🔍 Key Analytical Findings
-
-| Focus Area | Contribution |
+| Technology | Application |
 |---|---|
-| Gold Price Volatility | GARCH evaluates changes in conditional volatility. |
-| Price Analysis | Bollinger Bands contextualize prices against recent trends. |
-| Sales Trends | Monthly analysis highlights seasonal patterns. |
-| Anomaly Detection | LOF flags unusual transactions for further investigation. |
-| Customer Segmentation | K-Means identifies distinct purchasing groups. |
-| Procurement Strategy | Analytical indicators support informed purchasing decisions. |
-
-## 🚀 Recommendations
-
-- Evaluate procurement opportunities using gold price trends and volatility estimates.
-- Investigate unusual transactions identified by LOF.
-- Consider moving-average trends and calendar effects when planning inventory.
-- Use customer segments to support targeted marketing.
-- Review seasonal sales patterns when planning purchases and promotions.
-
-*Statistical indicators and model outputs are decision-support tools. They do not guarantee future gold prices or procurement profitability.*
-
-## 📂 Project Files
-
-- `Cleaned csv/` — Cleaned and prepared datasets.
-- `EDA and Data profiling/` — Exploratory analysis and data profiling.
-- `ML models/` — Statistical modeling and machine learning.
-- `Project report .pdf` — Project report.
-- `README.md` — Project documentation.
+| Python | Data analysis and modeling in Project 1 |
+| Pandas | Data manipulation and preprocessing |
+| Plotly | Interactive visual analysis |
+| Scikit-learn | Clustering and anomaly detection |
+| Statsmodels | Statistical and time-series analysis |
+| Jupyter Notebook | Exploratory analysis and modeling |
+| Microsoft Power BI | Interactive business dashboards |
+| DAX | Measures and derived business metrics |
 
 ---
 
-# 🛠️ Technical Skills Demonstrated
+# 🎯 Overall Learning Outcomes
 
-| Category | Technologies and Skills |
-|---|---|
-| Business Intelligence | Power BI |
-| Dashboard Calculations | DAX |
-| Programming | Python |
-| Data Manipulation | Pandas, NumPy |
-| Data Visualization | Power BI, Plotly |
-| Statistical Modeling | Statsmodels, GARCH |
-| Machine Learning | Scikit-learn |
-| Anomaly Detection | Local Outlier Factor |
-| Customer Segmentation | K-Means Clustering |
-| Price Analysis | Bollinger Bands |
-| Development Environment | Jupyter Notebook |
+These two independent projects demonstrate practical experience in:
+
+- Data cleaning and transformation.
+- Exploratory data analysis and visualization.
+- Business KPI design and interpretation.
+- Customer segmentation and anomaly detection.
+- Time-series and volatility analysis.
+- DAX calculations and interactive dashboard development.
+- Translating analytical findings into business recommendations.
+- Handling proprietary datasets responsibly.
 
 ---
 
-# 🎯 Overall Portfolio Value
+# 📁 Suggested Repository Structure
 
-These projects demonstrate how analytics can address different business challenges across two industries.
+```text
+Business-Intelligence-and-Data-Analytics/
+│
+├── README.md
+│
+├── ABC-Gold-Procurement-Strategy-Dashboard/
+│   ├── README.md
+│   ├── Cleaned csv/
+│   ├── EDA and Data profiling/
+│   ├── ML models/
+│   ├── ABC_Gold_Insights.pbix
+│   └── Project report.pdf
+│
+└── Business_dashboard/
+    ├── README.md
+    ├── Audit.pbix
+    └── Sales Report Overview.pptx
+```
 
-The Sales Dashboard focuses on sales reporting, customer insights, and business performance monitoring in metals manufacturing.
-
-The ABC Gold project applies statistical modeling, machine learning, customer segmentation, and price analysis to jewellery retail and procurement planning.
-
-Together, they demonstrate practical skills in data preparation, exploratory analysis, interactive dashboard development, analytical modeling, and business insight communication.
+*This is a suggested structure. Keep only files and folders that actually exist in your repository. Add notebooks, screenshots, and reports where available and appropriate.*
 
 ---
 
-# 👨‍💻 Author
+# 👤 Author
 
-**Saravana Kumar**
+**Saravana Kumar**  
+Data Science | Business Intelligence | Data Analytics
 
-**Areas of Interest:** Data Science | Business Intelligence | Machine Learning | Data Analytics
+---
 
-**GitHub:** [Saravanakumarsk1210](https://github.com/Saravanakumarsk1210)
+*This portfolio is intended for educational and professional demonstration. Analytical results are specific to the datasets and methods used; they should be validated before being used for financial or operational decisions.*
